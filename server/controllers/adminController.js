@@ -8,16 +8,21 @@ const { generateToken } = require('../utils/auth');
 const loginAdmin = async (req, res) => {
     const { username, password } = req.body;
 
-    const admin = await Admin.findOne({ username });
+    try {
+        const admin = await Admin.findOne({ username });
 
-    if (admin && (await bcrypt.compare(password, admin.passwordHash))) {
-        res.json({
-            _id: admin._id,
-            username: admin.username,
-            token: generateToken(admin._id),
-        });
-    } else {
-        res.status(401).json({ message: 'Invalid username or password' });
+        if (admin && (await bcrypt.compare(password, admin.passwordHash))) {
+            res.json({
+                _id: admin._id,
+                username: admin.username,
+                token: generateToken(admin._id),
+            });
+        } else {
+            res.status(401).json({ message: 'Invalid username or password' });
+        }
+    } catch (error) {
+        console.error('Admin login error:', error);
+        res.status(500).json({ message: 'Server error' });
     }
 };
 

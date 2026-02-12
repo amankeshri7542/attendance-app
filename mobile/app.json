@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Employee Attendance",
-    "slug": "employee-attendance",
+    "slug": "shiv-cement",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,7 +24,8 @@
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.ACCESS_COARSE_LOCATION",
-        "android.permission.ACCESS_FINE_LOCATION"
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.RECORD_AUDIO"
       ]
     },
     "web": {
@@ -44,6 +45,12 @@
         }
       ],
       "@react-native-community/datetimepicker"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c317d1d5-9dab-43d4-8af1-65117df1cd42"
+      }
+    },
+    "owner": "amankeshri7479s-organization"
   }
 }
