@@ -1,9 +1,8 @@
 import axios from 'axios';
 
-// ⚠️ UPDATE THIS to your Render URL after deployment, e.g.:
-// const BASE_URL = 'https://your-app-name.onrender.com/api';
-// For local dev, use: 'http://192.168.0.111:5001/api' or 'http://localhost:5001/api'
-const BASE_URL = 'https://your-app-name.onrender.com/api';
+// Production API URL (Render backend)
+// For local dev, change to: 'http://192.168.0.111:5001/api' or 'http://localhost:5001/api'
+const BASE_URL = 'https://attendance-app-yao2.onrender.com/api';
 
 const api = axios.create({
     baseURL: BASE_URL,
